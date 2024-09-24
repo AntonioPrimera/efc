@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+         xmlns:cec="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:efactura.mfinante.ro:CIUS-RO:1.0.1</cbc:CustomizationID>
+   <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+   <cbc:ID>PN2044643-</cbc:ID>
+   <cbc:IssueDate>2024-06-28</cbc:IssueDate>
+   <cbc:DueDate>2024-06-28</cbc:DueDate>
+   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+   <cbc:Note>Vehicle Identification Code: TMBGK7NW2M3100992</cbc:Note>
+   <cbc:Note>Vehicle Milage: 72572 km</cbc:Note>
+   <cbc:Note>Vehicle Brand: Škoda</cbc:Note>
+   <cbc:Note>Vehicle Engine Capacity: 1498 ccm</cbc:Note>
+   <cbc:Note>COD                           DENUMIRE                                                          </cbc:Note>
+   <cbc:Note>SOLICITARILE 2 SI 3 NU S-AU MANIFESTAT</cbc:Note>
+   <cbc:Note>NU EXISTA DEFECT INREGISTRAT IN URMA TEST GFF</cbc:Note>
+   <cbc:Note>A SE TINE SUB OBSERVATIE!</cbc:Note>
+   <cbc:Note>Al dumneavoastra consilier de service Banica Petru Marian  va multumeste pentru colaborare si va ure</cbc:Note>
+   <cbc:Note>***** Dorim sa va oferim SERVICII DE 5 STELE *****</cbc:Note>
+   <cbc:Note>Data livrarii bunului/prestarii serviciului se considera data facturii.</cbc:Note>
+   <cbc:Note>Schimbul de ulei va fi efectuat conform afisaj bord, dar nu mai tarziu de Km/data de</cbc:Note>
+   <cbc:Note>Urmatoarea Inspectie Service: la Km sau la data   , in functie de care termen intervine</cbc:Note>
+   <cbc:Note>Urmatoarea inspectie tehnica periodica (I.T.P) se va efectua la data inscrisa pe talon.</cbc:Note>
+   <cbc:DocumentCurrencyCode>RON</cbc:DocumentCurrencyCode>
+   <cbc:BuyerReference>2024019803</cbc:BuyerReference>
+   <cac:OrderReference>
+      <cbc:ID>2024019803</cbc:ID>
+      <cbc:SalesOrderID>2024019803</cbc:SalesOrderID>
+   </cac:OrderReference>
+   <cac:AccountingSupplierParty>
+      <cac:Party>
+         <cac:PartyName>
+            <cbc:Name>PORSCHE INTER AUTO ROMANIA SRL</cbc:Name>
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:StreetName>Bd Pipera, NR. 2</cbc:StreetName>
+            <cbc:CityName>Voluntari Jud Ilfov</cbc:CityName>
+            <cbc:PostalZone>077190</cbc:PostalZone>
+            <cbc:CountrySubentity>RO-IF</cbc:CountrySubentity>
+            <cac:Country>
+               <cbc:IdentificationCode>RO</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:PostalAddress>
+         <cac:PartyTaxScheme>
+            <cbc:CompanyID>RO22188461</cbc:CompanyID>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:PartyTaxScheme>
+         <cac:PartyLegalEntity>
+            <cbc:RegistrationName>PORSCHE INTER AUTO ROMANIA SRL</cbc:RegistrationName>
+            <cbc:CompanyID>J23/2067/2007</cbc:CompanyID>
+            <cbc:CompanyLegalForm>J23/2067/2007</cbc:CompanyLegalForm>
+         </cac:PartyLegalEntity>
+         <cac:Contact>
+            <cbc:Name>PORSCHE INTER AUTO ROMANIA SRL</cbc:Name>
+            <cbc:Telephone>0040212083610</cbc:Telephone>
+            <cbc:ElectronicMail>conta.pia@porsche.ro</cbc:ElectronicMail>
+         </cac:Contact>
+      </cac:Party>
+   </cac:AccountingSupplierParty>
+   <cac:AccountingCustomerParty>
+      <cac:Party>
+         <cac:PartyName>
+            <cbc:Name>AGRORAL SERV SRL</cbc:Name>
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:StreetName>Sos Giurgiului Nr 141</cbc:StreetName>
+            <cbc:CityName>Com Putineiu Jud Giurgiu (GR)</cbc:CityName>
+            <cbc:PostalZone>087185</cbc:PostalZone>
+            <cbc:CountrySubentity>RO-GR</cbc:CountrySubentity>
+            <cac:Country>
+               <cbc:IdentificationCode>RO</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:PostalAddress>
+         <cac:PartyTaxScheme>
+            <cbc:CompanyID>RO27127988</cbc:CompanyID>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:PartyTaxScheme>
+         <cac:PartyLegalEntity>
+            <cbc:RegistrationName>AGRORAL SERV SRL</cbc:RegistrationName>
+            <cbc:CompanyID>J52/333/2010</cbc:CompanyID>
+         </cac:PartyLegalEntity>
+         <cac:Contact>
+            <cbc:Name>AGRORAL SERV SRL</cbc:Name>
+            <cbc:Telephone>004 0724229272</cbc:Telephone>
+            <cbc:ElectronicMail>proiecte@agroral.ro</cbc:ElectronicMail>
+         </cac:Contact>
+      </cac:Party>
+   </cac:AccountingCustomerParty>
+   <cac:Delivery>
+      <cbc:ActualDeliveryDate>2024-06-28</cbc:ActualDeliveryDate>
+   </cac:Delivery>
+   <cac:PaymentMeans>
+      <cbc:PaymentMeansCode>42</cbc:PaymentMeansCode>
+      <cac:PayeeFinancialAccount>
+         <cbc:ID>RO70RZBR0000060009434129</cbc:ID>
+         <cbc:Name> PORSCHE INTER AUTO ROMANIA SRL</cbc:Name>
+      </cac:PayeeFinancialAccount>
+   </cac:PaymentMeans>
+   <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="RON">291.08</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="RON">1532.02</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="RON">291.08</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="RON">0.00</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="RON">0.00</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <cbc:ID>E</cbc:ID>
+            <cbc:Percent>0.00</cbc:Percent>
+            <cbc:TaxExemptionReason>Excempted from VAT</cbc:TaxExemptionReason>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+   </cac:TaxTotal>
+   <cac:LegalMonetaryTotal>
+      <cbc:LineExtensionAmount currencyID="RON">1532.02</cbc:LineExtensionAmount>
+      <cbc:TaxExclusiveAmount currencyID="RON">1532.02</cbc:TaxExclusiveAmount>
+      <cbc:TaxInclusiveAmount currencyID="RON">1823.10</cbc:TaxInclusiveAmount>
+      <cbc:AllowanceTotalAmount currencyID="RON">0.00</cbc:AllowanceTotalAmount>
+      <cbc:ChargeTotalAmount currencyID="RON">0.00</cbc:ChargeTotalAmount>
+      <cbc:PrepaidAmount currencyID="RON">0.00</cbc:PrepaidAmount>
+      <cbc:PayableAmount currencyID="RON">1823.10</cbc:PayableAmount>
+   </cac:LegalMonetaryTotal>
+   <cac:InvoiceLine>
+      <cbc:ID>2</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">99.76</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>FILTRU ULE Se utilizeaza 04E115561T</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>04E115561AC</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:CommodityClassification>
+            <cbc:ItemClassificationCode listID="HS">8421230090</cbc:ItemClassificationCode>
+         </cac:CommodityClassification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Vehicle Identification Code</cbc:Name>
+            <cbc:Value>TMBGK7NW2M3100992</cbc:Value>
+         </cac:AdditionalItemProperty>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Vehicle License Plate</cbc:Name>
+            <cbc:Value>B-281-ABC</cbc:Value>
+         </cac:AdditionalItemProperty>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Vehicle Milage</cbc:Name>
+            <cbc:Value>72572 km</cbc:Value>
+         </cac:AdditionalItemProperty>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Vehicle Model Code</cbc:Name>
+            <cbc:Value>NW44KD03</cbc:Value>
+         </cac:AdditionalItemProperty>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Vehicle First Registration Date</cbc:Name>
+            <cbc:Value>2021-03-16</cbc:Value>
+         </cac:AdditionalItemProperty>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Vehicle Brand</cbc:Name>
+            <cbc:Value>Škoda</cbc:Value>
+         </cac:AdditionalItemProperty>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Vehicle Charging Brand</cbc:Name>
+            <cbc:Value>C</cbc:Value>
+         </cac:AdditionalItemProperty>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Vehicle Model Designation</cbc:Name>
+            <cbc:Value>KAMIQ STYLE 1.5 TSI DSG</cbc:Value>
+         </cac:AdditionalItemProperty>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Vehicle Engine Capacity</cbc:Name>
+            <cbc:Value>1498 ccm</cbc:Value>
+         </cac:AdditionalItemProperty>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: 04E115561AC, Name: FILTRU ULE, Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">99.76</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>3</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">24.47</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Buson baie ulei</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>N  90288901</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:CommodityClassification>
+            <cbc:ItemClassificationCode listID="HS">7318157590</cbc:ItemClassificationCode>
+         </cac:CommodityClassification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: N  90288901, Name: Buson baie ulei, Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">24.47</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>4</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">3.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">25.59</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Surub M8x20 comanda cand stocul scade sub 100 buc</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>WHT000729A</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:CommodityClassification>
+            <cbc:ItemClassificationCode listID="HS">7318157590</cbc:ItemClassificationCode>
+         </cac:CommodityClassification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: WHT000729A, Name: Surub M8x20, Quantity: 3.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">8.53</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>5</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">12.92</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Garnitura buson baie ulei</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>N  0138158</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:CommodityClassification>
+            <cbc:ItemClassificationCode listID="HS">8484100090</cbc:ItemClassificationCode>
+         </cac:CommodityClassification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: N  0138158, Name: Garnitura buson baie ulei, Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">12.92</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>6</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">394.80</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Inspectie incl.schimb ulei .</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>01030020</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: 01030020, Name: Inspectie incl.schimb ulei ., Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">394.80</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>7</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">0.04</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">95.47</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Lichid frana DOT4(30L)</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>B  000750M7</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:CommodityClassification>
+            <cbc:ItemClassificationCode listID="HS">3819000090</cbc:ItemClassificationCode>
+         </cac:CommodityClassification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: B  000750M7, Name: Lichid frana DOT4(30L), Quantity: 0.040 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">2386.75</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>8</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">84.60</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Service lichid de frana .</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>01400050</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: 01400050, Name: Service lichid de frana ., Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">84.60</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>9</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">264.68</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Filtru polen</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>2Q0819669</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:CommodityClassification>
+            <cbc:ItemClassificationCode listID="HS">8421310090</cbc:ItemClassificationCode>
+         </cac:CommodityClassification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: 2Q0819669, Name: Filtru polen, Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">264.68</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>10</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">56.40</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Filtru praf si polen inlocuit</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>85185550</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: 85185550, Name: Filtru praf si polen inlocuit, Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">56.40</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>11</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">84.60</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Eficacitate franare verificat</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>46020100</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: 46020100, Name: Eficacitate franare verificat, Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">84.60</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>12</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">58.94</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Materiale mici</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>Materiale mici</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: Materiale mici, Name: Materiale mici, Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">58.94</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>13</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">4.30</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">456.79</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>Ulei Castrol LL IV tanc</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>SLX0W20T</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:CommodityClassification>
+            <cbc:ItemClassificationCode listID="HS">34031980</cbc:ItemClassificationCode>
+         </cac:CommodityClassification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: SLX0W20T, Name: Ulei Castrol LL IV tanc, Quantity: 4.300 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">106.23</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>14</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">-1.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">-127.00</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>1L ulei cadou - CASTROL LLIV 0W20 508 00/509 00</cbc:Name>
+         <cac:SellersItemIdentification>
+            <cbc:ID>CAS3</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+         <cac:AdditionalItemProperty>
+            <cbc:Name>Position 1</cbc:Name>
+            <cbc:Value>Label: CAS3, Name: 1L ulei cadou - CASTROL LLIV 0W20, Quantity: 1.000 Stück</cbc:Value>
+         </cac:AdditionalItemProperty>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">127.00</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>24</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="H87">0.00</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="RON">0.00</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>® Piese schimb originale/accesorii Skoda.Garantia se aplica conform legilor romane in vigoare</cbc:Name>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>E</cbc:ID>
+            <cbc:Percent>0.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="RON">0.00</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+</Invoice>
