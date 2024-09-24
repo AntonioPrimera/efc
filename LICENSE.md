@@ -1,12 +1,12 @@
 # License Agreement
 
-- Package: antonioprimera/e-factura
+- Package: antonioprimera/efc
 - Version 1.0
 
 Effective Date: September 1st, 2024
 
 ## 1. Grant of License
-Antonio Primera ("Licensor") hereby grants to the authorized user ("Licensee") a non-exclusive, non-transferable, revocable license to use the software package known as antonioprimera/e-factura ("Software") solely for the purpose of development and deployment in projects where the creator of this package (Antonio Primera) is an active stakeholder or contributor.
+Antonio Primera ("Licensor") hereby grants to the authorized user ("Licensee") a non-exclusive, non-transferable, revocable license to use the software package known as antonioprimera/efc ("Software") solely for the purpose of development and deployment in projects where the creator of this package (Antonio Primera) is an active stakeholder or contributor.
 
 ## 2. Restrictions
 ### 2.1 Prohibited Use
