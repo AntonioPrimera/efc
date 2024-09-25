@@ -5,16 +5,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('vendor_id')->nullable()->constrained('bps')->nullOnDelete();
-            $table->foreignId('customer_id')->nullable()->constrained('bps')->nullOnDelete();
+            //$table->foreignId('vendor_id')->nullable()->constrained('bps')->nullOnDelete();
+            //$table->foreignId('customer_id')->nullable()->constrained('bps')->nullOnDelete();
 
             $table->integer('type')->nullable();                        //380 / 384 / 389 / 751
             $table->string('message_id')->nullable();                   //anaf message id
@@ -35,16 +32,10 @@ return new class extends Migration
             $table->json('legal_monetary_total')->nullable();
             $table->json('lines')->nullable();
 
-            $table->dateTime('uploaded_at')->nullable();
-            $table->dateTime('sent_to_webhook_at')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('invoices');
