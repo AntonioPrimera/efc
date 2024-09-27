@@ -13,7 +13,7 @@ use Spatie\LaravelData\DataCollection;
 
 abstract class Invoice extends Model
 {
-    protected static array $dataCasts = [
+    protected static array $invoiceDataCasts = [
         'type' => InvoiceType::class,
         'issue_date' => 'date',
         'due_date' => 'date',
