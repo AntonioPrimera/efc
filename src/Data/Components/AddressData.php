@@ -18,9 +18,7 @@ class AddressData extends Data
         public string|null $postalCode,
         public string|null $country,
         public string|null $details,
-        public string|null $fullAddress,
     ) {
-        $this->fullAddress = $fullAddress ?? $this->fullAddress();
     }
 
     public static function fromXml(EFacturaXml $xml): self
@@ -33,7 +31,6 @@ class AddressData extends Data
             postalCode: $xml->get('PostalZone'),
             country: $xml->get('Country.IdentificationCode'),
             details: null,
-            fullAddress: null,
         );
     }
 
@@ -46,8 +43,8 @@ class AddressData extends Data
             : $countyString;
     }
 
-    protected function fullAddress(): string
-    {
-        return "{$this->street}, {$this->city}, Judet:{$this->county}, CP:{$this->postalCode}, {$this->country}";
-    }
+    //protected function fullAddress(): string
+    //{
+    //    return "{$this->street}, {$this->city}, Judet:{$this->county}, CP:{$this->postalCode}, {$this->country}";
+    //}
 }

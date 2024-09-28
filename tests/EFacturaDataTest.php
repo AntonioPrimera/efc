@@ -58,7 +58,6 @@ it ('can parse a complete efactura from an xml file', function () {
         ->and($f->vendor->address->postalCode)->toBe('077190')
         ->and($f->vendor->address->country)->toBe('RO')
         ->and($f->vendor->address->county)->toBe('IF')
-        ->and($f->vendor->address->fullAddress)->toBe('Bd Pipera, NR. 2, Voluntari Jud Ilfov, Judet:IF, CP:077190, RO')
         ->and($f->vendor->contact)->toBeInstanceOf(ContactData::class)
         ->and($f->vendor->contact->name)->toBe('PORSCHE INTER AUTO ROMANIA SRL')
         ->and($f->vendor->contact->phone)->toBe('0040212083610')
