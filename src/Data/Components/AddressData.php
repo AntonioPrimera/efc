@@ -10,34 +10,40 @@ use Spatie\LaravelData\Mappers\SnakeCaseMapper;
 #[MapName(SnakeCaseMapper::class)]
 class AddressData extends Data
 {
-    #[Computed]
-    public string $fullAddress;
-
     public function __construct(
-        public string|null $street,
         public string|null $city,
+        public string|null $county,
+        public string|null $street,
+        public string|null $streetNumber,
         public string|null $postalCode,
         public string|null $country,
-        public string|null $county,
+        public string|null $details,
+        public string|null $fullAddress,
     ) {
-        $this->county = $this->county($county);
-        $this->fullAddress = $this->fullAddress();
+        $this->fullAddress = $fullAddress ?? $this->fullAddress();
     }
 
     public static function fromXml(EFacturaXml $xml): self
     {
         return new self(
-            street: $xml->get('StreetName'),
             city: $xml->get('CityName'),
+            county: self::eFacturaXmlCounty($xml->get('CountrySubentity')),
+            street: $xml->get('StreetName'),
+            streetNumber: null,
             postalCode: $xml->get('PostalZone'),
             country: $xml->get('Country.IdentificationCode'),
-            county: $xml->get('CountrySubentity'),
+            details: null,
+            fullAddress: null,
         );
     }
 
-    protected function county(string $countyString): string
+    //--- Data adapters -----------------------------------------------------------------------------------------------
+
+    protected static function eFacturaXmlCounty(string|null $countyString): string|null
     {
-        return str_starts_with($countyString, 'RO-') ? substr($countyString, 3) : $countyString;
+        return is_string($countyString) && str_starts_with($countyString, 'RO-')
+            ? substr($countyString, 3)
+            : $countyString;
     }
 
     protected function fullAddress(): string

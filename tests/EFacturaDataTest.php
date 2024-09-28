@@ -1,5 +1,6 @@
 <?php
 
+use AntonioPrimera\Efc\Enums\InvoiceType;
 use AntonioPrimera\FileSystem\Folder;
 use AntonioPrimera\Efc\Data\Components\AccountingPartyData;
 use AntonioPrimera\Efc\Data\Components\AddressData;
@@ -33,7 +34,7 @@ it ('can parse a complete efactura from an xml file', function () {
     expect($f->efId)->toBe('PN2044643-')
         ->and($f->issueDate)->toBe('2024-06-28')
         ->and($f->dueDate)->toBe('2024-06-28')
-        ->and($f->invoiceTypeCode)->toBe('380')
+        ->and($f->type)->toBe(InvoiceType::Factura)
         ->and($f->note)->toStartWith("Vehicle Identification Code: TMBGK7NW2M3100992\nVehicle Milage: 72572 km\n")
         ->and($f->documentCurrencyCode)->toBe('RON')
         ->and($f->accountingCost)->toBeNull()

@@ -9,9 +9,14 @@ use AntonioPrimera\Efc\Data\Components\InvoiceLineData;
 use AntonioPrimera\Efc\Data\Components\LegalMonetaryTotalData;
 use AntonioPrimera\Efc\Data\Components\PaymentMeansData;
 use AntonioPrimera\Efc\Data\Components\TaxTotalData;
+use AntonioPrimera\Efc\Enums\InvoiceType;
+use AntonioPrimera\Efc\Models\Invoice;
 use AntonioPrimera\FileSystem\File;
 use AntonioPrimera\Efc\EFacturaXml;
+use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Attributes\MapName;
+use Spatie\LaravelData\Attributes\WithCast;
+use Spatie\LaravelData\Casts\EnumCast;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
 
@@ -26,12 +31,14 @@ class EFacturaData extends Data
         public string|null $efId,
         public string|null $issueDate,
         public string|null $dueDate,
-        public string|null $invoiceTypeCode,
+        public InvoiceType|null $type,
         public string|null $note,
         public string|null $documentCurrencyCode,
         public string|null $accountingCost,
         public string|null $buyerReference,
+        #[MapInputName('po_reference')]
         public string|null $purchaseOrderReference,
+        #[MapInputName('so_reference')]
         public string|null $salesOrderReference,
         /** @var array<BillingReferenceData> */
         public array $billingReferences,     //todo: this can be an array of references
@@ -43,7 +50,7 @@ class EFacturaData extends Data
         public LegalMonetaryTotalData|null $legalMonetaryTotal,
         /** @var array<InvoiceLineData> */
         public array $lines,
-        public AttachmentData|null $attachment,
+        public AttachmentData|null $attachment = null,
     ) {}
 
     public static function fromXml(EFacturaXml $xml): self
@@ -52,7 +59,7 @@ class EFacturaData extends Data
             efId: $xml->get('ID'),
             issueDate: $xml->get('IssueDate'),
             dueDate: $xml->get('DueDate'),
-            invoiceTypeCode: $xml->get('InvoiceTypeCode'),
+            type: InvoiceType::tryFrom($xml->get('InvoiceTypeCode')),
             note: implode("\n", $xml->getValues('Note')),
             documentCurrencyCode: $xml->get('DocumentCurrencyCode'),
             accountingCost: $xml->get('AccountingCost'),
@@ -74,5 +81,29 @@ class EFacturaData extends Data
     public static function fromXmlFile(File $file): self
     {
         return self::fromXml(EFacturaXml::fromFile($file));
+    }
+
+    public static function fromModel(Invoice $invoice): self
+    {
+        return new self(
+            efId: $invoice->ef_id,
+            issueDate: carbonDateString($invoice->issue_date),
+            dueDate: carbonDateString($invoice->due_date),
+            type: $invoice->type,
+            note: $invoice->note,
+            documentCurrencyCode: $invoice->document_currency_code,
+            accountingCost: $invoice->accounting_cost,
+            buyerReference: $invoice->buyer_reference,
+            purchaseOrderReference: $invoice->po_reference,
+            salesOrderReference: $invoice->so_reference,
+            billingReferences: $invoice->billing_references->all(),
+            vendor: AccountingPartyData::from($invoice->vendor),
+            customer: AccountingPartyData::from($invoice->customer),
+            delivery: $invoice->delivery,
+            paymentMeans: $invoice->payment_means,
+            taxTotal: $invoice->tax_total,
+            legalMonetaryTotal: $invoice->legal_monetary_total,
+            lines: $invoice->lines->all(),
+        );
     }
 }

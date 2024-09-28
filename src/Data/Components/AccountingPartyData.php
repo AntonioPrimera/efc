@@ -2,6 +2,8 @@
 namespace AntonioPrimera\Efc\Data\Components;
 
 use AntonioPrimera\Efc\EFacturaXml;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
@@ -11,8 +13,10 @@ class AccountingPartyData extends Data
 {
     public function __construct(
         public string|null $name,
+        #[MapInputName('fullCif')]
         public string|null $cif,
         public string|null $regCom,
+        #[MapInputName('adresa')]
         public AddressData|null $address,
         public ContactData|null $contact,
     ) {}
