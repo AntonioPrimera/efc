@@ -12,6 +12,7 @@ use Spatie\LaravelData\Mappers\SnakeCaseMapper;
 class AccountingPartyData extends Data
 {
     public function __construct(
+        #[MapInputName('nume')]
         public string|null $name,
         #[MapInputName('fullCif')]
         public string|null $cif,

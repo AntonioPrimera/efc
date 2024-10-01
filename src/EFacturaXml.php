@@ -20,6 +20,9 @@ use AntonioPrimera\Efc\Exceptions\XmlParseException;
  */
 class EFacturaXml extends \SimpleXMLElement
 {
+    //whether the namespaces have been initialized
+    protected bool $namespacesInitialized = false;
+
     //--- Factories ---------------------------------------------------------------------------------------------------
 
     public static function fromString(string $xml): static
@@ -46,9 +49,20 @@ class EFacturaXml extends \SimpleXMLElement
 
     //--- Protected helpers -------------------------------------------------------------------------------------------
 
-    protected function initializeNamespaces(): static
+    public function initializeNamespaces(): static
     {
-        $namespaces = $this->getNamespaces(true);
+        //don't reinitialize the namespaces
+        if ($this->namespacesInitialized)
+            return $this;
+
+        $defaultNamespaces = [
+            "" => "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2", //default namespace must exist
+        //    "cbc" => "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",
+        //    "cac" => "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
+        ];
+
+        $namespaces = array_merge($this->getNamespaces(true), $defaultNamespaces);
+        //$namespaces = $this->getNamespaces(true);
 
         foreach ($namespaces as $key => $value) {
             if ($this->registerXPathNamespace($key ?: 'default', $value) === false)
@@ -61,6 +75,9 @@ class EFacturaXml extends \SimpleXMLElement
 
         if (!empty($errors))
             throw new XmlParseException('Could not initialize namespaces');
+
+        //mark the namespaces as initialized for this instance
+        $this->namespacesInitialized = true;
 
         return $this;
     }
@@ -89,7 +106,7 @@ class EFacturaXml extends \SimpleXMLElement
      */
     public function getNodes(string $path): array|false|null|static
     {
-        return $this->xpath($this->path($path, leaf: false, exactPath: true));
+        return $this->expath($this->path($path, leaf: false, exactPath: true));
     }
 
     /**
@@ -97,7 +114,7 @@ class EFacturaXml extends \SimpleXMLElement
      */
     public function searchNodes(string $path): array|false|null|static
     {
-        return $this->xpath($this->path(path: $path, leaf: false, exactPath: false));
+        return $this->expath($this->path(path: $path, leaf: false, exactPath: false));
     }
 
     /**
@@ -143,7 +160,7 @@ class EFacturaXml extends \SimpleXMLElement
      */
     public function getValueNodes(string $path): array|false|null|static
     {
-        return $this->xpath($this->path(path: $path, leaf: true, exactPath: true));
+        return $this->expath($this->path(path: $path, leaf: true, exactPath: true));
     }
 
     /**
@@ -151,7 +168,7 @@ class EFacturaXml extends \SimpleXMLElement
      */
     public function searchValueNodes(string $path): array|false|null|static
     {
-        return $this->xpath($this->path(path: $path, leaf: true, exactPath: false));
+        return $this->expath($this->path(path: $path, leaf: true, exactPath: false));
     }
 
     /**
@@ -274,5 +291,18 @@ class EFacturaXml extends \SimpleXMLElement
     public function quantityNode(string $path): Quantity
     {
         return $this->valueNode(path: $path)?->quantity() ?? Quantity::empty();
+    }
+
+    //--- Protected helpers -------------------------------------------------------------------------------------------
+
+    /**
+     * Wrapper of the parent xpath() method that initializes
+     * namespaces before executing the expression
+     *
+     * @throws XmlParseException
+     */
+    protected function expath(string $expression): array|false|null
+    {
+        return $this->initializeNamespaces()->xpath($expression);
     }
 }

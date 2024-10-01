@@ -77,7 +77,6 @@ abstract class Invoice extends Model
  * $table->json('lines')->nullable();
  *
  * $table->dateTime('uploaded_at')->nullable();
- * $table->dateTime('sent_to_webhook_at')->nullable();
  * $table->softDeletes();
  * $table->timestamps();
  * });

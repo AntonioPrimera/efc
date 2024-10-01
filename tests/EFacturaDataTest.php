@@ -146,19 +146,19 @@ it ('can parse a complete efactura from an xml file', function () {
     ;
 });
 
-//it ('can parse the other invoices successfully', function () {
-//    $invoices = $this->eFacturaFolder->subFolder('invoices')->getFiles('/\.xml$/');
-//    $invoiceCount = count($invoices);
-//
-//    $timer = microtime(true);
-//    foreach ($invoices as $invoice)
-//        expect(EFacturaData::from(EFacturaXml::fromFile($invoice)))->toBeInstanceOf(EFacturaData::class);
-//
-//    $time = intval((microtime(true) - $timer) * 1000);
-//    $average = number_format($time / $invoiceCount, 2);
-//    $perSecond = intval($invoiceCount / ($time / 1000));
-//    ray("Time to parse $invoiceCount invoices: $time (ms). Average: $average (ms / invoice). Speed: $perSecond (invoices / second)");
-//});
+it ('can parse the other invoices successfully', function () {
+    $invoices = $this->eFacturaFolder->subFolder('invoices')->getFiles('/\.xml$/');
+    $invoiceCount = count($invoices);
+
+    $timer = microtime(true);
+    foreach ($invoices as $invoice)
+        expect(EFacturaData::from(EFacturaXml::fromFile($invoice)))->toBeInstanceOf(EFacturaData::class);
+
+    $time = intval((microtime(true) - $timer) * 1000);
+    $average = number_format($time / $invoiceCount, 2);
+    $perSecond = intval($invoiceCount / ($time / 1000));
+    ray("Time to parse $invoiceCount invoices: $time (ms). Average: $average (ms / invoice). Speed: $perSecond (invoices / second)");
+});
 
 it('can extract a pdf attachment from an efactura xml', function () {
     //set up the attachments folder and delete it and its contents if it already exists

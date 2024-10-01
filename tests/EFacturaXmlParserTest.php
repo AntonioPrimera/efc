@@ -1,12 +1,15 @@
 <?php
 use AntonioPrimera\Efc\EFacturaXml;
 
-beforeEach(function () {
-    $this->xml = EFacturaXml::fromFile(__DIR__ . '/Context/4344790293.xml');
-    expect($this->xml)->toBeInstanceOf(EFacturaXml::class);
-});
+//beforeEach(function () {
+//    $this->xml = EFacturaXml::fromFile(__DIR__ . '/Context/4344790293.xml');
+//    expect($this->xml)->toBeInstanceOf(EFacturaXml::class);
+//});
 
 it('can find a specific node value', function () {
+    $this->xml = EFacturaXml::fromFile(__DIR__ . '/Context/4344790293.xml');
+    expect($this->xml)->toBeInstanceOf(EFacturaXml::class);
+
     //test path()
     expect($this->xml->path('ID', true, true))->toBe('./cbc:ID')
         ->and($this->xml->path('ID', false, true))->toBe('./cac:ID')
@@ -111,4 +114,13 @@ it('can find a specific node value', function () {
         ->and($this->xml->searchNode('PartyName')->getValueNode('Name')->value())->toBe('PORSCHE INTER AUTO ROMANIA SRL')
         ->and($this->xml->getNode('AccountingSupplierParty.Party')->getNode('PostalAddress')->getValue('Country.IdentificationCode'))->toBe('RO')
         ;
+});
+
+it('can get around missing data', function () {
+    $xml = EFacturaXml::fromFile(__DIR__ . '/Context/invoices/4420596047.xml');    //missing some vendor & customer data
+    expect($xml)->toBeInstanceOf(EFacturaXml::class)
+        ->and($xml->get('AccountingSupplierParty.Party.PartyName.Name'))->toBeNull();
+
+    $party = $xml->node('AccountingSupplierParty.Party');
+    ray($party->get('PartyName.Name'));
 });
