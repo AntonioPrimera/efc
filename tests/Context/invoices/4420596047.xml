@@ -15,9 +15,7 @@
     <cac:AccountingSupplierParty xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
         <cac:Party>
             <cac:PostalAddress>
-                <cbc:StreetName xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">ALEXEI
-                    TOLSTOI 8
-                </cbc:StreetName>
+                <cbc:StreetName xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">ALEXEI TOLSTOI 8</cbc:StreetName>
                 <cbc:CityName xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">Bacau
                 </cbc:CityName>
                 <cbc:PostalZone xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
@@ -65,17 +63,12 @@
     <cac:AccountingCustomerParty xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
         <cac:Party>
             <cac:PostalAddress>
-                <cbc:StreetName xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">BD
-                    FERDINAND I 118
-                </cbc:StreetName>
-                <cbc:CityName xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">SECTOR2
-                </cbc:CityName>
-                <cbc:CountrySubentity xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-                    RO-B
-                </cbc:CountrySubentity>
+                <cbc:StreetName xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">BD FERDINAND I 118</cbc:StreetName>
+                <cbc:CityName xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">SECTOR2</cbc:CityName>
+                <cbc:CountrySubentity xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">RO-B</cbc:CountrySubentity>
                 <cac:Country>
-                    <cbc:IdentificationCode
-                        xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">RO
+                    <cbc:IdentificationCode xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+                        RO
                     </cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>

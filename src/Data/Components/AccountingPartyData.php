@@ -25,10 +25,13 @@ class AccountingPartyData extends Data
     public static function fromXml(EFacturaXml $xml): self
     {
         $xml = $xml->node('Party');
+        $regCom = $xml->get('PartyLegalEntity.CompanyID');
         return new self(
             name: $xml->get('PartyName.Name') ?? $xml->get('PartyLegalEntity.RegistrationName'),
-            cif: $xml->get('PartyTaxScheme.CompanyID') ?? $xml->get('PartyIdentification.ID'),
-            regCom: $xml->get('PartyLegalEntity.CompanyID') ?? $xml->get('PartyLegalEntity.CompanyID'),
+            cif: $xml->get('PartyTaxScheme.CompanyID')
+                ?? $xml->get('PartyIdentification.ID')
+                ?? $xml->get('PartyLegalEntity.CompanyID'), //this is usually regCom, but sometimes it's CIF (used as a last resort)
+            regCom: isRegCom($regCom) ? $regCom : null,
             address: data($xml->node('PostalAddress'), AddressData::class),
             contact: data($xml->node('Contact'), ContactData::class),
         );
