@@ -26,9 +26,9 @@ class AccountingPartyData extends Data
     {
         $xml = $xml->node('Party');
         return new self(
-            name: $xml->get('PartyName.Name'),
-            cif: $xml->get('PartyTaxScheme.CompanyID'),
-            regCom: $xml->get('PartyLegalEntity.CompanyID'),
+            name: $xml->get('PartyName.Name') ?? $xml->get('PartyLegalEntity.RegistrationName'),
+            cif: $xml->get('PartyTaxScheme.CompanyID') ?? $xml->get('PartyIdentification.ID'),
+            regCom: $xml->get('PartyLegalEntity.CompanyID') ?? $xml->get('PartyLegalEntity.CompanyID'),
             address: data($xml->node('PostalAddress'), AddressData::class),
             contact: data($xml->node('Contact'), ContactData::class),
         );
