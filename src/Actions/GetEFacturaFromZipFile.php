@@ -17,8 +17,10 @@ class GetEFacturaFromZipFile
         $unzipFolder = $zipFile->parentFolder->subFolder($zipFile->nameWithoutExtension . '-unzipped');
         $zipFile->unzipTo($unzipFolder);
 
-        //get the first XML file from the unzipped folder (should be the only one)
-        $xmlFile = array_values($unzipFolder->getFiles('/\.xml$/'))[0] ?? null;
+        //get the first XML file from the unzipped folder, which has a pure numeric file name
+        //each zip folder contains 2 xml files, one with the invoice data and one with the invoice signature
+        //e.g.: 4407242534.xml and semnatura_4407242534.xml
+        $xmlFile = array_values($unzipFolder->getFiles('/^\d+\.xml$/'))[0] ?? null;
         if (!$xmlFile)
             throw new InvalidXmlException("No XML file found in the ZIP archive [$zipFile->name].");
 
