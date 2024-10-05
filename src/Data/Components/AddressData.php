@@ -1,26 +1,14 @@
 <?php
 namespace AntonioPrimera\Efc\Data\Components;
 
+use AntonioPrimera\AnafDataStructures\Components\AddressData as AnafAddressData;
 use AntonioPrimera\Efc\EFacturaXml;
-use Spatie\LaravelData\Attributes\Computed;
 use Spatie\LaravelData\Attributes\MapName;
-use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
 
 #[MapName(SnakeCaseMapper::class)]
-class AddressData extends Data
+class AddressData extends AnafAddressData
 {
-    public function __construct(
-        public string|null $city,
-        public string|null $county,
-        public string|null $street,
-        public string|null $streetNumber,
-        public string|null $postalCode,
-        public string|null $country,
-        public string|null $details,
-    ) {
-    }
-
     public static function fromXml(EFacturaXml $xml): self
     {
         return new self(
@@ -42,9 +30,4 @@ class AddressData extends Data
             ? substr($countyString, 3)
             : $countyString;
     }
-
-    //protected function fullAddress(): string
-    //{
-    //    return "{$this->street}, {$this->city}, Judet:{$this->county}, CP:{$this->postalCode}, {$this->country}";
-    //}
 }

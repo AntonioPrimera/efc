@@ -2,7 +2,6 @@
 namespace AntonioPrimera\Efc\Data\Components;
 
 use AntonioPrimera\Efc\EFacturaXml;
-use Illuminate\Database\Eloquent\Model;
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;

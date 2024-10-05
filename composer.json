@@ -11,8 +11,9 @@
     "require": {
         "php": "^8.2",
         "ext-simplexml": "*",
+        "antonioprimera/anaf-data-structures": "^0.2",
         "antonioprimera/filesystem": "^2.2",
-        "spatie/laravel-data": "^4.9",
+        "spatie/laravel-data": "^4.0",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
