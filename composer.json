@@ -17,10 +17,10 @@
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
-        "orchestra/testbench": "^9.0.0||^8.22.0",
-        "pestphp/pest": "^2.34",
-        "pestphp/pest-plugin-arch": "^2.7",
-        "pestphp/pest-plugin-laravel": "^2.3",
+        "orchestra/testbench": ">=8.22.0",
+        "pestphp/pest": ">=2.35.1",
+        "pestphp/pest-plugin-arch": ">=v2.7.0",
+        "pestphp/pest-plugin-laravel": ">=v2.4.0",
         "spatie/laravel-ray": "^1.35"
     },
     "autoload": {
