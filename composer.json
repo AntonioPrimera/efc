@@ -11,9 +11,9 @@
     "require": {
         "php": "^8.2",
         "ext-simplexml": "*",
-        "antonioprimera/anaf-data-structures": "^0.4",
-        "antonioprimera/filesystem": "^2.2",
-        "spatie/laravel-data": "^4.0",
+        "antonioprimera/anaf-data-structures": "^0.4.1",
+        "antonioprimera/filesystem": "^2.2.3",
+        "spatie/laravel-data": "^4.13",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
@@ -21,7 +21,7 @@
         "pestphp/pest": ">=2.35.1",
         "pestphp/pest-plugin-arch": ">=v2.7.0",
         "pestphp/pest-plugin-laravel": ">=v2.4.0",
-        "spatie/laravel-ray": "^1.35"
+        "spatie/laravel-ray": "^1.37.1"
     },
     "autoload": {
         "psr-4": {
