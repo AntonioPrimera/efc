@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<Invoice xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:fgo="https://www.fgo.ro/xmlns" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+  <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:efactura.mfinante.ro:CIUS-RO:1.0.1</cbc:CustomizationID>
+  <cbc:ID>PAZF25004</cbc:ID>
+  <cbc:IssueDate>2025-03-31</cbc:IssueDate>
+  <cbc:DueDate>2025-07-31</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode>RON</cbc:DocumentCurrencyCode>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID>34379090</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>PROD AZ GROUP SRL</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Sos. Giurgiului Nr. 26, Putineiu, Giurgiu</cbc:StreetName>
+        <cbc:AdditionalStreetName>-</cbc:AdditionalStreetName>
+        <cbc:CityName>Putineiu</cbc:CityName>
+        <cbc:CountrySubentity>RO-GR</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>RO</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>RO34379090</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>PROD AZ GROUP SRL</cbc:RegistrationName>
+        <cbc:CompanyID>J52/232/2015</cbc:CompanyID>
+        <cbc:CompanyLegalForm>Capital social: 46000</cbc:CompanyLegalForm>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID>0000000000000x</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>BALABAN GEORGE</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>STR FREZIEI, NR. 11</cbc:StreetName>
+        <cbc:AdditionalStreetName>-</cbc:AdditionalStreetName>
+        <cbc:CityName>Giurgiu</cbc:CityName>
+        <cbc:CountrySubentity>RO-GR</cbc:CountrySubentity>
+        <cac:Country>
+          <cbc:IdentificationCode>RO</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>0000000000000</cbc:CompanyID>
+        <cac:TaxScheme />
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>BALABAN GEORGE</cbc:RegistrationName>
+        <cbc:CompanyID>0000000000000</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode>42</cbc:PaymentMeansCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>RO29INGB0000999905432971</cbc:ID>
+      <cbc:Name>ING BANK ROMANIA</cbc:Name>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode>42</cbc:PaymentMeansCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>RO87BTRLRONCRT0308975101</cbc:ID>
+      <cbc:Name>BANCA TRANSILVANIA</cbc:Name>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="RON">76.38</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="RON">848.62</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="RON">76.38</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>9.00</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="RON">848.62</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="RON">848.62</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="RON">925.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="RON">925.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="H87">1.000</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="RON">848.62</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Name>PRESTARE SERVICII AGRICOLE CONFORM ANEXA</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>9.00</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="RON">848.62</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="H87">1.000</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>
