@@ -175,3 +175,61 @@ it('can extract a pdf attachment from an efactura xml', function () {
             ->exists->toBeTrue()
             ->name->toBe('24MI06909718.pdf');
 });
+
+it('can parse a credit-note xml file', function () {
+    $f = EFacturaData::from(EFacturaXml::fromFile($this->eFacturaFolder->file('invoices/4928921199-credit-note.xml')));
+
+    expect($f->type)->toBe(InvoiceType::NotaDeCreditare)
+        ->and($f->efId)->toBe('I25M19140007921')
+        ->and($f->issueDate)->toBe('2025-04-24')
+        ->and($f->dueDate)->toBeNull()
+        ->and($f->documentCurrencyCode)->toBe('RON')
+
+        //vendor
+        ->and($f->vendor->cif)->toBe('RO16702141')
+        ->and($f->vendor->regCom)->toBe('J40/13616/2004')
+        ->and($f->vendor->name)->toBe('Leroy Merlin Romania S.R.L')
+        ->and($f->vendor->address->street)->toBe('Bucuresti Sectorul 2,Str.Icoanei,Nr.11-13,BUCURESTI')
+        ->and($f->vendor->address->city)->toBe('SECTOR2')
+        ->and($f->vendor->address->county)->toBe('B')
+        ->and($f->vendor->address->country)->toBe('RO')
+
+        //customer
+        ->and($f->customer->cif)->toBe('RO34948765')
+        ->and($f->customer->regCom)->toBeNull()
+        ->and($f->customer->name)->toBe('AMBRUS A&B CONSULTING SRL')
+        ->and($f->customer->address->street)->toBe('MARGHITA, , , BIHOR')
+        ->and($f->customer->address->city)->toBe('MARGHITA')
+        ->and($f->customer->address->county)->toBe('BH')
+        ->and($f->customer->address->country)->toBe('RO')
+
+        //tax total
+        ->and($f->taxTotal->amount)->toBe('18.99')
+        ->and($f->taxTotal->currency)->toBe('RON')
+
+        //legal monetary total
+        ->and($f->legalMonetaryTotal->lineExtensionAmount)->toBe('99.94')
+        ->and($f->legalMonetaryTotal->taxExclusiveAmount)->toBe('99.94')
+        ->and($f->legalMonetaryTotal->taxInclusiveAmount)->toBe('118.93')
+        ->and($f->legalMonetaryTotal->allowanceTotalAmount)->toBeNull()
+        ->and($f->legalMonetaryTotal->chargeTotalAmount)->toBeNull()
+        ->and($f->legalMonetaryTotal->prepaidAmount)->toBeNull()
+        ->and($f->legalMonetaryTotal->payableAmount)->toBe('118.93')
+
+        //lines
+        ->and($f->lines)->toBeArray()->toHaveCount(1)
+        ->and($f->lines[0])->toBeInstanceOf(InvoiceLineData::class)
+        ->and($f->lines[0]->id)->toBe('1')
+        ->and($f->lines[0]->quantity)->toBe('1.00')
+        ->and($f->lines[0]->uom)->toBe('H87')
+        ->and($f->lines[0]->amount)->toBe('99.94')
+        ->and($f->lines[0]->currency)->toBe('RON')
+        ->and($f->lines[0]->unitPrice)->toBe('163.87')
+        ->and($f->lines[0]->note)->toBeNull()
+        ->and($f->lines[0]->orderLineReference)->toBeNull()
+        ->and($f->lines[0]->item)->toBeInstanceOf(InvoiceLineItemData::class)
+        ->and($f->lines[0]->item->name)->toBe('BAL CAP STR STEJ1300X70X7')
+        ->and($f->lines[0]->item->classifiedTaxCategory->id)->toBe('S')
+        ->and($f->lines[0]->item->classifiedTaxCategory->percent)->toBe('19.00')
+        ->and($f->lines[0]->item->classifiedTaxCategory->taxScheme)->toBe('VAT');
+});

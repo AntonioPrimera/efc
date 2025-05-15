@@ -9,6 +9,8 @@ use AntonioPrimera\Efc\Data\Components\InvoiceLineData;
 use AntonioPrimera\Efc\Data\Components\LegalMonetaryTotalData;
 use AntonioPrimera\Efc\Data\Components\PaymentMeansData;
 use AntonioPrimera\Efc\Data\Components\TaxTotalData;
+use AntonioPrimera\Efc\Data\Parsers\CreditNoteParser;
+use AntonioPrimera\Efc\Data\Parsers\InvoiceParser;
 use AntonioPrimera\Efc\Enums\InvoiceType;
 use AntonioPrimera\Efc\Models\Invoice;
 use AntonioPrimera\FileSystem\File;
@@ -55,27 +57,32 @@ class EFacturaData extends Data
 
     public static function fromXml(EFacturaXml $xml): self
     {
-        return new self(
-            efId: $xml->get('ID'),
-            issueDate: $xml->get('IssueDate'),
-            dueDate: $xml->get('DueDate'),
-            type: InvoiceType::tryFrom($xml->get('InvoiceTypeCode')),
-            note: implode("\n", $xml->getValues('Note')),
-            documentCurrencyCode: $xml->get('DocumentCurrencyCode'),
-            accountingCost: $xml->get('AccountingCost'),
-            buyerReference: $xml->get('BuyerReference'),
-            purchaseOrderReference: $xml->get('OrderReference.ID'),     //this is not straightforward, but it's in the definition
-            salesOrderReference: $xml->get('OrderReference.SalesOrderID'),
-            billingReferences: array_map(fn($node) => BillingReferenceData::fromXml($node), $xml->nodes('BillingReference')),
-            vendor: data($xml->node('AccountingSupplierParty'), AccountingPartyData::class),
-            customer: data($xml->node('AccountingCustomerParty'), AccountingPartyData::class),
-            delivery: data($xml->node('Delivery'), DeliveryData::class),
-            paymentMeans: data($xml->node('PaymentMeans'), PaymentMeansData::class),
-            taxTotal: data($xml->node('TaxTotal'), TaxTotalData::class),
-            legalMonetaryTotal: data($xml->node('LegalMonetaryTotal'), LegalMonetaryTotalData::class),
-            lines: array_map(fn($node) => InvoiceLineData::fromXml($node), $xml->nodes('InvoiceLine')),
-            attachment: data($xml->node('AdditionalDocumentReference.Attachment'), AttachmentData::class),
-        );
+        if ($xml->getName() === 'CreditNote')
+            return CreditNoteParser::parse($xml);
+
+        return InvoiceParser::parse($xml);
+
+        //new self(
+        //    efId: $xml->get('ID'),
+        //    issueDate: $xml->get('IssueDate'),
+        //    dueDate: $xml->get('DueDate'),
+        //    type: InvoiceType::tryFrom($xml->get('InvoiceTypeCode')),
+        //    note: implode("\n", $xml->getValues('Note')),
+        //    documentCurrencyCode: $xml->get('DocumentCurrencyCode'),
+        //    accountingCost: $xml->get('AccountingCost'),
+        //    buyerReference: $xml->get('BuyerReference'),
+        //    purchaseOrderReference: $xml->get('OrderReference.ID'),     //this is not straightforward, but it's in the definition
+        //    salesOrderReference: $xml->get('OrderReference.SalesOrderID'),
+        //    billingReferences: array_map(fn($node) => BillingReferenceData::fromXml($node), $xml->nodes('BillingReference')),
+        //    vendor: data($xml->node('AccountingSupplierParty'), AccountingPartyData::class),
+        //    customer: data($xml->node('AccountingCustomerParty'), AccountingPartyData::class),
+        //    delivery: data($xml->node('Delivery'), DeliveryData::class),
+        //    paymentMeans: data($xml->node('PaymentMeans'), PaymentMeansData::class),
+        //    taxTotal: data($xml->node('TaxTotal'), TaxTotalData::class),
+        //    legalMonetaryTotal: data($xml->node('LegalMonetaryTotal'), LegalMonetaryTotalData::class),
+        //    lines: array_map(fn($node) => InvoiceLineData::fromXml($node), $xml->nodes('InvoiceLine')),
+        //    attachment: data($xml->node('AdditionalDocumentReference.Attachment'), AttachmentData::class),
+        //);
     }
 
     public static function fromXmlFile(File $file): self
@@ -106,4 +113,8 @@ class EFacturaData extends Data
             lines: $invoice->lines->all(),
         );
     }
+
+    //--- Specific document types -------------------------------------------------------------------------------------
+
+
 }

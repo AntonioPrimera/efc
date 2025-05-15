@@ -1,6 +1,8 @@
 <?php
 namespace AntonioPrimera\Efc\Data\Components;
 
+use AntonioPrimera\Efc\Data\Parsers\CreditNoteLineParser;
+use AntonioPrimera\Efc\Data\Parsers\InvoiceLineParser;
 use AntonioPrimera\Efc\EFacturaXml;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
@@ -23,19 +25,24 @@ class InvoiceLineData extends Data
 
     public static function fromXml(EFacturaXml $xml): self
     {
-        $invoicedQuantity = $xml->quantityNode('InvoicedQuantity');
-        $lineExtensionAmount = $xml->priceNode('LineExtensionAmount');
-        $unitPrice = $xml->priceNode('Price.PriceAmount');
-        return new self(
-            id: $xml->get('ID'),
-            quantity: $invoicedQuantity->quantity,
-            uom: $invoicedQuantity->uom,
-            amount: $lineExtensionAmount->amount,
-            unitPrice: $unitPrice->amount,
-            currency: $unitPrice->currency ?: $lineExtensionAmount->currency ?: 'RON',
-            note: implode("\n", $xml->getValues('Note')) ?: null,
-            orderLineReference: $xml->get('OrderLineReference.LineID'),
-            item: data($xml->node('Item'), InvoiceLineItemData::class),
-        );
+        if ($xml->getName() === 'CreditNoteLine')
+            return CreditNoteLineParser::parse($xml);
+
+        return InvoiceLineParser::parse($xml);
+
+        //$invoicedQuantity = $xml->quantityNode('InvoicedQuantity');
+        //$lineExtensionAmount = $xml->priceNode('LineExtensionAmount');
+        //$unitPrice = $xml->priceNode('Price.PriceAmount');
+        //return new self(
+        //    id: $xml->get('ID'),
+        //    quantity: $invoicedQuantity->quantity,
+        //    uom: $invoicedQuantity->uom,
+        //    amount: $lineExtensionAmount->amount,
+        //    unitPrice: $unitPrice->amount,
+        //    currency: $unitPrice->currency ?: $lineExtensionAmount->currency ?: 'RON',
+        //    note: implode("\n", $xml->getValues('Note')) ?: null,
+        //    orderLineReference: $xml->get('OrderLineReference.LineID'),
+        //    item: data($xml->node('Item'), InvoiceLineItemData::class),
+        //);
     }
 }
