@@ -1,7 +1,6 @@
 <?php
 namespace AntonioPrimera\Efc\Data\Components;
 
-use AntonioPrimera\AnafDataStructures\Cif;
 use AntonioPrimera\Efc\EFacturaXml;
 use Illuminate\Support\Str;
 use Spatie\LaravelData\Attributes\MapInputName;
@@ -63,7 +62,7 @@ class AccountingPartyData extends Data
 
     protected static function isCompany(string|null $cif): bool
     {
-        return Cif::from($cif)->isValid();
+        return cif($cif)->isValid();
     }
 
     protected static function isValidCnp(string|null $cnp): bool
