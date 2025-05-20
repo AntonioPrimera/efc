@@ -17,7 +17,7 @@ class AccountingPartyData extends Data
         public string|null $cif,
         public string|null $regCom,
         #[MapInputName('adresa')]
-        public AddressData|null $address,
+        public string|null $address,        //changed from AddressData to string
         public ContactData|null $contact,
     ) {}
 
@@ -29,6 +29,9 @@ class AccountingPartyData extends Data
             ?? $xml->get('PartyIdentification.ID')
             ?? $xml->get('PartyLegalEntity.CompanyID'); //this is usually regCom, but sometimes it's CIF (used as a last resort)
         $name = $xml->get('PartyName.Name') ?? $xml->get('PartyLegalEntity.RegistrationName');
+
+        //parse the address data, but only the full address is used as a string
+        /* @var AddressData $address */
         $address = data($xml->node('PostalAddress'), AddressData::class);
 
         //for personal invoices, the CNP is used as a CIF (if no valid cnp is found, a hash of the name is used)
@@ -39,7 +42,7 @@ class AccountingPartyData extends Data
             name: $name,
             cif: $cif,
             regCom: isRegCom($regCom) ? $regCom : null,
-            address: $address,
+            address: $address->fullAddress(),   //this is a string, not an AddressData object
             contact: data($xml->node('Contact'), ContactData::class),
         );
     }

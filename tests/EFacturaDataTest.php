@@ -3,7 +3,6 @@
 use AntonioPrimera\Efc\Enums\InvoiceType;
 use AntonioPrimera\FileSystem\Folder;
 use AntonioPrimera\Efc\Data\Components\AccountingPartyData;
-use AntonioPrimera\Efc\Data\Components\AddressData;
 use AntonioPrimera\Efc\Data\Components\AttachmentData;
 use AntonioPrimera\Efc\Data\Components\ContactData;
 use AntonioPrimera\Efc\Data\Components\DeliveryData;
@@ -52,12 +51,8 @@ it ('can parse a complete efactura from an xml file', function () {
         ->and($f->vendor->name)->toBe('PORSCHE INTER AUTO ROMANIA SRL')
         ->and($f->vendor->cif)->toBe('RO22188461')
         ->and($f->vendor->regCom)->toBe('J23/2067/2007')
-        ->and($f->vendor->address)->toBeInstanceOf(AddressData::class)
-        ->and($f->vendor->address->street)->toBe('Bd Pipera, NR. 2')
-        ->and($f->vendor->address->city)->toBe('Voluntari Jud Ilfov')
-        ->and($f->vendor->address->postalCode)->toBe('077190')
-        ->and($f->vendor->address->country)->toBe('RO')
-        ->and($f->vendor->address->county)->toBe('IF')
+        ->and($f->vendor->address)->toBeString()
+        ->and($f->vendor->address)->toContain('Bd Pipera, NR. 2', 'Voluntari Jud Ilfov', '077190', 'IF', 'RO')
         ->and($f->vendor->contact)->toBeInstanceOf(ContactData::class)
         ->and($f->vendor->contact->name)->toBe('PORSCHE INTER AUTO ROMANIA SRL')
         ->and($f->vendor->contact->phone)->toBe('0040212083610')
@@ -189,19 +184,13 @@ it('can parse a credit-note xml file', function () {
         ->and($f->vendor->cif)->toBe('RO16702141')
         ->and($f->vendor->regCom)->toBe('J40/13616/2004')
         ->and($f->vendor->name)->toBe('Leroy Merlin Romania S.R.L')
-        ->and($f->vendor->address->street)->toBe('Bucuresti Sectorul 2,Str.Icoanei,Nr.11-13,BUCURESTI')
-        ->and($f->vendor->address->city)->toBe('SECTOR2')
-        ->and($f->vendor->address->county)->toBe('B')
-        ->and($f->vendor->address->country)->toBe('RO')
+        ->and($f->vendor->address)->toContain('Bucuresti Sectorul 2,Str.Icoanei,Nr.11-13,BUCURESTI', 'SECTOR2')
 
         //customer
         ->and($f->customer->cif)->toBe('RO34948765')
         ->and($f->customer->regCom)->toBeNull()
         ->and($f->customer->name)->toBe('AMBRUS A&B CONSULTING SRL')
-        ->and($f->customer->address->street)->toBe('MARGHITA, , , BIHOR')
-        ->and($f->customer->address->city)->toBe('MARGHITA')
-        ->and($f->customer->address->county)->toBe('BH')
-        ->and($f->customer->address->country)->toBe('RO')
+        ->and($f->customer->address)->toContain('MARGHITA, , , BIHOR', 'BH', 'RO')
 
         //tax total
         ->and($f->taxTotal->amount)->toBe('18.99')

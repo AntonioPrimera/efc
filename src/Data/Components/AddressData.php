@@ -2,6 +2,7 @@
 namespace AntonioPrimera\Efc\Data\Components;
 
 use AntonioPrimera\Efc\EFacturaXml;
+use Illuminate\Support\Str;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
@@ -19,11 +20,33 @@ class AddressData extends Data
         public string|null $details,
     ) {}
 
+    //public function fullAddress(): string
+    //{
+    //    return "{$this->street}, {$this->streetNumber}, "
+    //        . ($this->details ? "{$this->details}, " : '')
+    //        . "{$this->city}, Judet:{$this->county}, CP:{$this->postalCode}, {$this->country}";
+    //}
+
     public function fullAddress(): string
     {
-        return "{$this->street}, {$this->streetNumber}, "
-            . ($this->details ? "{$this->details}, " : '')
-            . "{$this->city}, Judet:{$this->county}, CP:{$this->postalCode}, {$this->country}";
+        $judet = $this->county;
+
+        if (str_contains(Str::slug($judet), 'bucuresti') || $judet === 'B')
+            $judet = 'București';
+        elseif ($judet)
+            $judet = "Județ: $judet";
+
+        $parts = [
+            $this->street,
+            $this->streetNumber ? "nr. $this->streetNumber" : null,
+            $this->details,
+            $this->city,
+            $judet,
+            $this->postalCode ? "CP: $this->postalCode" : null,
+            $this->country,
+        ];
+
+        return implode(', ', array_filter($parts));
     }
 
     public static function fromXml(EFacturaXml $xml): self
