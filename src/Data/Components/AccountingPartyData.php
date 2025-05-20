@@ -24,10 +24,8 @@ class AccountingPartyData extends Data
     public static function fromXml(EFacturaXml $xml): self
     {
         $xml = $xml->node('Party');
-        $regCom = $xml->get('PartyLegalEntity.CompanyID');
-        $cif = $xml->get('PartyTaxScheme.CompanyID')
-            ?? $xml->get('PartyIdentification.ID')
-            ?? $xml->get('PartyLegalEntity.CompanyID'); //this is usually regCom, but sometimes it's CIF (used as a last resort)
+        $regCom = static::determineRegCom($xml);
+        $cif = static::determineCif($xml);
         $name = $xml->get('PartyName.Name') ?? $xml->get('PartyLegalEntity.RegistrationName');
 
         //parse the address data, but only the full address is used as a string
@@ -35,13 +33,13 @@ class AccountingPartyData extends Data
         $address = data($xml->node('PostalAddress'), AddressData::class);
 
         //for personal invoices, the CNP is used as a CIF (if no valid cnp is found, a hash of the name is used)
-        if (!static::isCompany($cif))
-            $cif = static::pfUid($cif, $name, $address);
+        if (!$cif)
+            $cif = static::determineCNP($xml) ?? static::pfUid($name, $address);
 
         return new self(
             name: $name,
             cif: $cif,
-            regCom: isRegCom($regCom) ? $regCom : null,
+            regCom: $regCom,
             address: $address->fullAddress(),   //this is a string, not an AddressData object
             contact: data($xml->node('Contact'), ContactData::class),
         );
@@ -49,23 +47,67 @@ class AccountingPartyData extends Data
 
     //--- Protected helpers -------------------------------------------------------------------------------------------
 
-    protected static function pfUid(string $cif, string $name, AddressData|null $address): string
+    protected static function determineCif(EFacturaXml $xml): string|null
     {
-        //if a valid CNP is found, use it as the CIF
-        if (static::isValidCnp($cif))
+        $cif = $xml->get('PartyTaxScheme.CompanyID');
+        if ($cif && cif($cif)->isValid())
             return $cif;
 
+        $cif = $xml->get('PartyIdentification.ID');
+        if ($cif && cif($cif)->isValid())
+            return $cif;
+
+        //this is usually regCom, but sometimes it's CIF (used as a last resort)
+        $cif = $xml->get('PartyLegalEntity.CompanyID');
+        if ($cif && cif($cif)->isValid())
+            return $cif;
+
+        return null;
+    }
+
+    protected static function determineRegCom(EFacturaXml $xml): string|null
+    {
+        $regCom = $xml->get('PartyLegalEntity.CompanyID');
+        if ($regCom && isRegCom($regCom))
+            return $regCom;
+
+        //this is usually CIF, but sometimes it's regCom (used as a last resort)
+        $regCom = $xml->get('PartyIdentification.ID');
+        if ($regCom && isRegCom($regCom))
+            return $regCom;
+
+        return null;
+    }
+
+    protected static function determineCNP(EFacturaXml $xml): string|null
+    {
+        $cnp = $xml->get('PartyTaxScheme.CompanyID');
+        if ($cnp && static::isValidCnp($cnp))
+            return $cnp;
+
+        $cnp = $xml->get('PartyIdentification.ID');
+        if ($cnp && static::isValidCnp($cnp))
+            return $cnp;
+
+        $cnp = $xml->get('PartyLegalEntity.CompanyID');
+        if ($cnp && static::isValidCnp($cnp))
+            return $cnp;
+
+        return null;
+    }
+
+    /**
+     * Generates a unique identifier based on the provided name and address data.
+     * This should uniquely identify a person, even if no CNP is provided.
+     */
+    protected static function pfUid(string $name, AddressData|null $address): string
+    {
         $city = $address?->city ?? '';
         $street = $address?->street
             ? str_replace(['strada', 'str', 'bulevard', 'bd', 'blvd', 'bld', 'intrarea', 'numar', 'nr' ], '', strtolower($address->street))
             : '';
 
         return hash('sha256', Str::slug("$name-$city-$street"));
-    }
-
-    protected static function isCompany(string|null $cif): bool
-    {
-        return cif($cif)->isValid();
     }
 
     protected static function isValidCnp(string|null $cnp): bool

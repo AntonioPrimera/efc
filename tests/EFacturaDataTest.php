@@ -222,3 +222,13 @@ it('can parse a credit-note xml file', function () {
         ->and($f->lines[0]->item->classifiedTaxCategory->percent)->toBe('19.00')
         ->and($f->lines[0]->item->classifiedTaxCategory->taxScheme)->toBe('VAT');
 });
+
+it('can work around bad vat-codes in accounting party data', function () {
+    $f = EFacturaData::from(EFacturaXml::fromFile($this->eFacturaFolder->file('invoices/4844000915-bad-cif.xml')));
+
+    expect($f->type)->toBe(InvoiceType::Factura)
+        ->and($f->vendor->cif)->toBe('RO48889170')
+        ->and($f->vendor->regCom)->toBe('J35/3784/2023')
+        ->and($f->customer->cif)->toBe('40361381')
+        ->and($f->customer->regCom)->toBe('J05/3347/2018');
+});
