@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+         xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+    <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:efactura.mfinante.ro:CIUS-RO:1.0.1</cbc:CustomizationID>
+    <cbc:ProfileID>TA</cbc:ProfileID>
+    <cbc:ID>RO79009900073093</cbc:ID>
+    <cbc:IssueDate>2025-04-29</cbc:IssueDate>
+    <cbc:InvoiceTypeCode>751</cbc:InvoiceTypeCode>
+    <cbc:Note>* Pretul produselor electronice si electrocasnice include taxa de timbru verde. * Referire facturi emise
+        anterior * Garantiile achitate pt. ambalaje reutilizabile nu se includ in baza de impozitare a TVA * Operator
+        economic certificat pentru comertul cu produse ecologice de SRAC CERT SRL, RO-ECO-026
+    </cbc:Note>
+    <cbc:DocumentCurrencyCode>RON</cbc:DocumentCurrencyCode>
+    <cac:InvoicePeriod>
+        <cbc:EndDate>2025-04-29</cbc:EndDate>
+        <cbc:DescriptionCode>35</cbc:DescriptionCode>
+    </cac:InvoicePeriod>
+    <cac:ProjectReference>
+        <cbc:ID>4304449001847</cbc:ID>
+    </cac:ProjectReference>
+    <cac:AccountingSupplierParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="0088">4049728000004</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PostalAddress>
+                <cbc:StreetName>STR. Barbu Vacarescu nr. 120-144</cbc:StreetName>
+                <cbc:CityName>SECTOR2</cbc:CityName>
+                <cbc:PostalZone>020284</cbc:PostalZone>
+                <cbc:CountrySubentity>RO-B</cbc:CountrySubentity>
+                <cac:Country>
+                    <cbc:IdentificationCode>RO</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyTaxScheme>
+                <cbc:CompanyID>RO15991149</cbc:CompanyID>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+            <cac:PartyLegalEntity>
+                <cbc:RegistrationName>Kaufland Romania SCS</cbc:RegistrationName>
+                <cbc:CompanyID>Nr. Reg. Com.: J40/17052/12.12.2003;Cod de acciza: RO0010000YY00</cbc:CompanyID>
+            </cac:PartyLegalEntity>
+            <cac:Contact>
+                <cbc:ElectronicMail>RO-VW-REWE-FACTURARE-MAGAZINE@KAUFLAND.RO</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+        <cac:Party>
+            <cac:PostalAddress>
+                <cbc:StreetName>GIURGIULUI, 141</cbc:StreetName>
+                <cbc:CityName>PUTINEIU</cbc:CityName>
+                <cbc:PostalZone>87185</cbc:PostalZone>
+                <cbc:CountrySubentity>RO-GR</cbc:CountrySubentity>
+                <cac:Country>
+                    <cbc:IdentificationCode>RO</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyTaxScheme>
+                <cbc:CompanyID>RO27127988</cbc:CompanyID>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+            <cac:PartyLegalEntity>
+                <cbc:RegistrationName>AGRORAL SERV SRL</cbc:RegistrationName>
+                <cbc:CompanyID schemeID="0188">27127988</cbc:CompanyID>
+            </cac:PartyLegalEntity>
+            <cac:Contact>
+                <cbc:Name>Revânzător: - EOID: - FID: -</cbc:Name>
+                <cbc:ElectronicMail>office@agroral.ro</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:AccountingCustomerParty>
+    <cac:Delivery>
+        <cbc:ActualDeliveryDate>2025-04-29</cbc:ActualDeliveryDate>
+        <cac:DeliveryLocation>
+            <cbc:ID schemeID="0088">4300175920360</cbc:ID>
+        </cac:DeliveryLocation>
+    </cac:Delivery>
+    <cac:PaymentMeans>
+        <cbc:PaymentMeansCode>1</cbc:PaymentMeansCode>
+    </cac:PaymentMeans>
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="RON">15.45</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="RON">49.12</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="RON">9.33</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>19.00</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="RON">68.04</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="RON">6.12</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>9.00</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="RON">12.00</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="RON">0.00</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:ID>Z</cbc:ID>
+                <cbc:Percent>0.00</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="RON">129.16</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount currencyID="RON">129.16</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount currencyID="RON">144.61</cbc:TaxInclusiveAmount>
+        <cbc:AllowanceTotalAmount currencyID="RON">0.00</cbc:AllowanceTotalAmount>
+        <cbc:ChargeTotalAmount currencyID="RON">0.00</cbc:ChargeTotalAmount>
+        <cbc:PrepaidAmount currencyID="RON">144.61</cbc:PrepaidAmount>
+        <cbc:PayableAmount currencyID="RON">0.00</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal>
+    <cac:InvoiceLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:Note>GARANTIE AMBALAJ</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">12.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">6.00</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>GARANTIE AMBALAJ</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>Z</cbc:ID>
+                <cbc:Percent>0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">0.5</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:Note>BORSEC APA 2L</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">6.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">20.87</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>BORSEC APA 2L</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>9</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">3.48</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>3</cbc:ID>
+        <cbc:Note>MR PROPER SOL SUPR1L</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">1.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">12.60</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>MR PROPER SOL SUPR1L</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>19</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">12.6</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>4</cbc:ID>
+        <cbc:Note>GARANTIE AMBALAJ</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">6.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">3.00</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>GARANTIE AMBALAJ</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>Z</cbc:ID>
+                <cbc:Percent>0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">0.5</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>5</cbc:ID>
+        <cbc:Note>SMOOS SAP.LICHID</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">1.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">6.29</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>SMOOS SAP.LICHID</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>19</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">6.29</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>6</cbc:ID>
+        <cbc:Note>GARANTIE AMBALAJ</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">6.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">3.00</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>GARANTIE AMBALAJ</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>Z</cbc:ID>
+                <cbc:Percent>0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">0.5</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>7</cbc:ID>
+        <cbc:Note>ACE GEL WC 700 ML</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">1.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">12.18</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>ACE GEL WC 700 ML</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>19</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">12.18</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>8</cbc:ID>
+        <cbc:Note>ACE GEL WC 700 ML</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">1.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">12.18</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>ACE GEL WC 700 ML</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>19</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">12.18</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>9</cbc:ID>
+        <cbc:Note>BORSEC APA CARBO 1L</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">6.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">17.56</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>BORSEC APA CARBO 1L</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>9</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">2.93</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>10</cbc:ID>
+        <cbc:Note>BORSEC APA 0,5L</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">12.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">29.61</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>BORSEC APA 0,5L</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>9</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">2.47</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+    <cac:InvoiceLine>
+        <cbc:ID>11</cbc:ID>
+        <cbc:Note>PARISS 2 STR 100 M</cbc:Note>
+        <cbc:InvoicedQuantity unitCode="C62">1.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="RON">5.87</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Name>PARISS 2 STR 100 M</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>S</cbc:ID>
+                <cbc:Percent>19</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="RON">5.87</cbc:PriceAmount>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
+        </cac:Price>
+    </cac:InvoiceLine>
+</Invoice>

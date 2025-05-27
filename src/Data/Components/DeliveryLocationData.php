@@ -16,9 +16,10 @@ class DeliveryLocationData extends Data
 
     public static function fromXml(EFacturaXml $xml): self
     {
+        $addressNode = $xml->node('Address');
         return new self(
             id: $xml->get('ID'),
-            address: AddressData::fromXml($xml->node('Address')),
+            address: $addressNode ? AddressData::fromXml($addressNode) : null,
         );
     }
 }

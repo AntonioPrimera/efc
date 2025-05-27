@@ -232,3 +232,13 @@ it('can work around bad vat-codes in accounting party data', function () {
         ->and($f->customer->cif)->toBe('40361381')
         ->and($f->customer->regCom)->toBe('J05/3347/2018');
 });
+
+it('can parse an invoice with a GLN number for delivery', function () {
+    $f = EFacturaData::from(EFacturaXml::fromFile($this->eFacturaFolder->file('invoices/4942864297-gln-delivery-location.xml')));
+
+    expect($f)->toBeInstanceOf(EfacturaData::class)
+        ->and($f->efId)->toBe('RO79009900073093')
+        ->and($f->delivery->location->id)->toBe('4300175920360')
+        ->and($f->delivery->location->address)->toBeNull();
+});
+
