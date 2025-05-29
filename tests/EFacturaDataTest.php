@@ -242,3 +242,13 @@ it('can parse an invoice with a GLN number for delivery', function () {
         ->and($f->delivery->location->address)->toBeNull();
 });
 
+it('can parse an invoice with an attachment URL', function () {
+    $f = EFacturaData::from(EFacturaXml::fromFile($this->eFacturaFolder->file('invoices/4870146608-attachment-url.xml')));
+
+    expect($f)->toBeInstanceOf(EfacturaData::class)
+        ->and($f->efId)->toBe('SM92500026273')
+        ->and($f->attachment)->toBeInstanceOf(AttachmentData::class)
+        ->and($f->attachment->url)->toBe('https://efactura.re.croscloud.com/crosweb/otp?code=5eec266a-64b7-4eb4-8682-c8f438f5c2cb');
+        //->and($f->attachment->mimeType)->toBe('application/pdf');
+});
+
