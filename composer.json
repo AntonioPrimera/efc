@@ -14,7 +14,8 @@
         "antonioprimera/cif": "^1.0",
         "antonioprimera/filesystem": "^2.2.3",
         "spatie/laravel-data": "^4.13",
-        "spatie/laravel-package-tools": "^1.16"
+        "spatie/laravel-package-tools": "^1.16",
+        "ext-libxml": "*"
     },
     "require-dev": {
         "orchestra/testbench": ">=8.22.0",

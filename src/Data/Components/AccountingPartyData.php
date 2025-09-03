@@ -67,12 +67,16 @@ class AccountingPartyData extends Data
 
     protected static function determineRegCom(EFacturaXml $xml): string|null
     {
-        $regCom = $xml->get('PartyLegalEntity.CompanyID');
-        if ($regCom && isRegCom($regCom))
-            return $regCom;
+        // Check all PartyLegalEntity.CompanyID values (there might be multiple)
+        $companyIds = $xml->getValues('PartyLegalEntity.CompanyID');
+        foreach ($companyIds as $companyId) {
+            $trimmed = trim($companyId);
+            if ($trimmed && isRegCom($trimmed))
+                return $trimmed;
+        }
 
         //this is usually CIF, but sometimes it's regCom (used as a last resort)
-        $regCom = $xml->get('PartyIdentification.ID');
+        $regCom = trim($xml->get('PartyIdentification.ID') ?? '');
         if ($regCom && isRegCom($regCom))
             return $regCom;
 

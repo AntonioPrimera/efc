@@ -23,6 +23,10 @@ class EFacturaXml extends \SimpleXMLElement
     //whether the namespaces have been initialized
     protected bool $namespacesInitialized = false;
 
+    //dynamic namespace prefixes detected from XML
+    public string $cacPrefix = 'cac';
+    public string $cbcPrefix = 'cbc';
+
     //--- Factories ---------------------------------------------------------------------------------------------------
 
     public static function fromString(string $xml): static
@@ -71,6 +75,23 @@ class EFacturaXml extends \SimpleXMLElement
             $this->namespaces[$key ?: 'default'] = (string) $value;
         }
 
+        // Detect namespace prefixes dynamically
+        foreach ($namespaces as $prefix => $uri) {
+            if ($uri === 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2') {
+                $this->cacPrefix = $prefix ?: 'cac';
+            } elseif ($uri === 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2') {
+                $this->cbcPrefix = $prefix ?: 'cbc';
+            }
+        }
+
+        // Ensure we never have empty prefixes which would create invalid XPath
+        if (empty($this->cacPrefix)) {
+            $this->cacPrefix = 'cac';
+        }
+        if (empty($this->cbcPrefix)) {
+            $this->cbcPrefix = 'cbc';
+        }
+
         $errors = $this->xpath('//default:Error');
 
         if (!empty($errors))
@@ -86,19 +107,48 @@ class EFacturaXml extends \SimpleXMLElement
 
     /**
      * Define a path to search for in the EFactura XML, using dot notation
-     * Path parts are prefixed with cac: and the last part with :cbc if $leaf is true
+     * Path parts are prefixed with dynamically detected aggregate/basic component prefixes
      * If $exactPath is false, the path will be searched in the entire hierarchy (using '//')
      */
     public function path(string $path, bool $leaf, bool $exactPath): string
     {
-        //split the path into parts and prefix each part with cac: or cbc: depending on its position
+        //ensure namespaces are initialized to detect prefixes
+        $this->initializeNamespaces();
+
+        // Detect current namespace prefixes from document
+        $prefixes = $this->detectNamespacePrefixes();
+
+        //split the path into parts and prefix each part with detected namespace prefixes
         $pathParts = collect(explode('.', $path));
         $partCount = $pathParts->count();
-        $lastPartPrefix = $leaf ? 'cbc' : 'cac';
-        $pathParts->transform(fn($part, $index) => $index < $partCount - 1 ? "cac:$part" : "$lastPartPrefix:$part");
+        $lastPartPrefix = $leaf ? $prefixes['cbc'] : $prefixes['cac'];
+        $pathParts->transform(fn($part, $index) => $index < $partCount - 1 ? "{$prefixes['cac']}:$part" : "$lastPartPrefix:$part");
 
         //join the parts back together and search for the path in the entire hierarchy
         return ($exactPath ? './' : '//') . $pathParts->implode('/');
+    }
+
+    /**
+     * Detect namespace prefixes from document for UBL components
+     */
+    public function detectNamespacePrefixes(): array
+    {
+        // Get all namespaces from document (recursive = true)
+        $namespaces = $this->getDocNamespaces(true);
+
+        // Default prefixes
+        $prefixes = ['cac' => 'cac', 'cbc' => 'cbc'];
+
+        // Detect actual prefixes used in document
+        foreach ($namespaces as $prefix => $uri) {
+            if ($uri === 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2') {
+                $prefixes['cac'] = $prefix ?: 'cac';
+            } elseif ($uri === 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2') {
+                $prefixes['cbc'] = $prefix ?: 'cbc';
+            }
+        }
+
+        return $prefixes;
     }
 
     /**
@@ -303,6 +353,32 @@ class EFacturaXml extends \SimpleXMLElement
      */
     protected function expath(string $expression): array|false|null
     {
-        return $this->initializeNamespaces()->xpath($expression);
+        $this->initializeNamespaces();
+        //return $this->xpath($expression);
+
+        // Debug invalid expressions - catch PHP errors
+        try {
+            libxml_use_internal_errors(true);
+            $result = $this->xpath($expression);
+            $errors = libxml_get_errors();
+
+            if (!empty($errors) || $result === false) {
+                $errorMsg = "Invalid XPath expression: $expression";
+                if (!empty($errors)) {
+                    $errorMsg .= " - LibXML errors: " . implode(', ', array_map(fn($e) => $e->message, $errors));
+                }
+                throw new XmlParseException($errorMsg);
+            }
+
+            // Note: Cannot propagate namespace prefixes to child elements
+            // due to PHP SimpleXMLElement limitations - each child element will
+            // detect prefixes from its own document when needed
+
+            return $result;
+        } catch (\Throwable $e) {
+            throw new XmlParseException("XPath error for expression '$expression': " . $e->getMessage());
+        } finally {
+            libxml_clear_errors();
+        }
     }
 }

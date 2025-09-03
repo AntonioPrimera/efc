@@ -19,7 +19,7 @@ class DeliveryLocationData extends Data
         $addressNode = $xml->node('Address');
         return new self(
             id: $xml->get('ID'),
-            address: $addressNode ? AddressData::fromXml($addressNode) : null,
+            address: is_object($addressNode) ? AddressData::fromXml($addressNode) : null,
         );
     }
 }

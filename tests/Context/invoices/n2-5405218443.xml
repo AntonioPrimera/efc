@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+         xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+         xmlns:prx="urn:sap.com:proxy:P01:/1SAI/TAS4D443EC6486F491EFBB3:916"
+         xmlns:n1="urn:oasis:names:specification:ubl:schema:xs:CommonExtensionComponents-2"
+         xmlns:n2="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:n3="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+         xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+    <n3:UBLVersionID>2.1</n3:UBLVersionID>
+    <n3:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:efactura.mfinante.ro:CIUS-RO:1.0.1</n3:CustomizationID>
+    <n3:ID>511028952</n3:ID>
+    <n3:IssueDate>2025-08-27</n3:IssueDate>
+    <n3:DueDate>2025-08-27</n3:DueDate>
+    <n3:InvoiceTypeCode>380</n3:InvoiceTypeCode>
+    <n3:DocumentCurrencyCode>RON</n3:DocumentCurrencyCode>
+    <n3:TaxCurrencyCode>RON</n3:TaxCurrencyCode>
+    <n3:BuyerReference>Vanzare</n3:BuyerReference>
+    <n2:OrderReference>
+        <n3:ID>511047590</n3:ID>
+    </n2:OrderReference>
+    <n2:DespatchDocumentReference>
+        <n3:ID>511231125</n3:ID>
+    </n2:DespatchDocumentReference>
+    <n2:AdditionalDocumentReference>
+        <n3:ID>511028952</n3:ID>
+        <n3:DocumentDescription>Vanzare</n3:DocumentDescription>
+    </n2:AdditionalDocumentReference>
+    <n2:ProjectReference>
+        <n3:ID>511005528</n3:ID>
+    </n2:ProjectReference>
+    <n2:AccountingSupplierParty>
+        <n2:Party>
+            <n2:PostalAddress>
+                <n3:StreetName>Com Floresti, Sat Floresti, DN1/E60, KM 490+13, Jud. Cluj</n3:StreetName>
+                <n3:CityName>Floresti</n3:CityName>
+                <n3:PostalZone>407280</n3:PostalZone>
+                <n3:CountrySubentity>RO-CJ</n3:CountrySubentity>
+                <n2:Country>
+                    <n3:IdentificationCode>RO</n3:IdentificationCode>
+                </n2:Country>
+            </n2:PostalAddress>
+            <n2:PartyTaxScheme>
+                <n3:CompanyID>RO11267586</n3:CompanyID>
+                <n2:TaxScheme>
+                    <n3:ID>VAT</n3:ID>
+                </n2:TaxScheme>
+            </n2:PartyTaxScheme>
+            <n2:PartyLegalEntity>
+                <n3:RegistrationName>S.C. Doka Romania Tehnica Cofrajelor S.R.L.</n3:RegistrationName>
+            </n2:PartyLegalEntity>
+            <n2:PartyLegalEntity>
+                <n3:CompanyID>J2004001180235</n3:CompanyID>
+            </n2:PartyLegalEntity>
+            <n2:Contact>
+                <n3:Name>Alexandra Surducan</n3:Name>
+                <n3:Telephone>40741129795</n3:Telephone>
+                <n3:ElectronicMail>alexandra.surducan@doka.com</n3:ElectronicMail>
+            </n2:Contact>
+        </n2:Party>
+    </n2:AccountingSupplierParty>
+    <n2:AccountingCustomerParty>
+        <n2:Party>
+            <n2:PostalAddress>
+                <n3:StreetName>Str. Irinyi Janos nr. 4</n3:StreetName>
+                <n3:CityName>Marghita</n3:CityName>
+                <n3:PostalZone>415300</n3:PostalZone>
+                <n3:CountrySubentity>RO-BH</n3:CountrySubentity>
+                <n2:Country>
+                    <n3:IdentificationCode>RO</n3:IdentificationCode>
+                </n2:Country>
+            </n2:PostalAddress>
+            <n2:PartyTaxScheme>
+                <n3:CompanyID>RO34948765</n3:CompanyID>
+                <n2:TaxScheme>
+                    <n3:ID>VAT</n3:ID>
+                </n2:TaxScheme>
+            </n2:PartyTaxScheme>
+            <n2:PartyLegalEntity>
+                <n3:RegistrationName>SC AMBRUS A&amp;B CONSULTING SRL</n3:RegistrationName>
+            </n2:PartyLegalEntity>
+        </n2:Party>
+    </n2:AccountingCustomerParty>
+    <n2:Delivery>
+        <n2:DeliveryLocation>
+            <n2:Address>
+                <n3:StreetName>Str. Irinyi Janos nr. 4</n3:StreetName>
+                <n3:CityName>Marghita</n3:CityName>
+                <n3:PostalZone>415300</n3:PostalZone>
+                <n3:CountrySubentity>RO-BH</n3:CountrySubentity>
+                <n2:Country>
+                    <n3:IdentificationCode>RO</n3:IdentificationCode>
+                </n2:Country>
+            </n2:Address>
+        </n2:DeliveryLocation>
+    </n2:Delivery>
+    <n2:PaymentMeans>
+        <n3:PaymentMeansCode>31</n3:PaymentMeansCode>
+        <n2:PayeeFinancialAccount>
+            <n3:ID>RO74RZBR0000060002405825</n3:ID>
+            <n3:Name>Raiffeisen Bank</n3:Name>
+            <n2:FinancialInstitutionBranch>
+                <n3:ID>RZBRROBU</n3:ID>
+            </n2:FinancialInstitutionBranch>
+        </n2:PayeeFinancialAccount>
+    </n2:PaymentMeans>
+    <n2:TaxTotal>
+        <n3:TaxAmount currencyID="RON">762.66</n3:TaxAmount>
+        <n2:TaxSubtotal>
+            <n3:TaxableAmount currencyID="RON">3631.70</n3:TaxableAmount>
+            <n3:TaxAmount currencyID="RON">762.66</n3:TaxAmount>
+            <n2:TaxCategory>
+                <n3:ID>S</n3:ID>
+                <n3:Percent>21.00</n3:Percent>
+                <n2:TaxScheme>
+                    <n3:ID>VAT</n3:ID>
+                </n2:TaxScheme>
+            </n2:TaxCategory>
+        </n2:TaxSubtotal>
+    </n2:TaxTotal>
+    <n2:LegalMonetaryTotal>
+        <n3:LineExtensionAmount currencyID="RON">3631.70</n3:LineExtensionAmount>
+        <n3:TaxExclusiveAmount currencyID="RON">3631.70</n3:TaxExclusiveAmount>
+        <n3:TaxInclusiveAmount currencyID="RON">4394.36</n3:TaxInclusiveAmount>
+        <n3:ChargeTotalAmount currencyID="RON">0.00</n3:ChargeTotalAmount>
+        <n3:PayableAmount currencyID="RON">4394.36</n3:PayableAmount>
+    </n2:LegalMonetaryTotal>
+    <n2:InvoiceLine>
+        <n3:ID>1</n3:ID>
+        <n3:InvoicedQuantity unitCode="H87">7.00</n3:InvoicedQuantity>
+        <n3:LineExtensionAmount currencyID="RON">3325.00</n3:LineExtensionAmount>
+        <n2:Item>
+            <n3:Name>Decofrol Trennfit 30l FK</n3:Name>
+            <n2:ClassifiedTaxCategory>
+                <n3:ID>S</n3:ID>
+                <n3:Percent>21.00</n3:Percent>
+                <n2:TaxScheme>
+                    <n3:ID>VAT</n3:ID>
+                </n2:TaxScheme>
+            </n2:ClassifiedTaxCategory>
+        </n2:Item>
+        <n2:Price>
+            <n3:PriceAmount currencyID="RON">475.00</n3:PriceAmount>
+        </n2:Price>
+    </n2:InvoiceLine>
+    <n2:InvoiceLine>
+        <n3:ID>2</n3:ID>
+        <n3:InvoicedQuantity unitCode="H87">1.00</n3:InvoicedQuantity>
+        <n3:LineExtensionAmount currencyID="RON">56.70</n3:LineExtensionAmount>
+        <n2:Item>
+            <n3:Name>Taxa Mediu uleiuri Doka-Trenn - 0,3 lei/kg</n3:Name>
+            <n2:ClassifiedTaxCategory>
+                <n3:ID>S</n3:ID>
+                <n3:Percent>21.00</n3:Percent>
+                <n2:TaxScheme>
+                    <n3:ID>VAT</n3:ID>
+                </n2:TaxScheme>
+            </n2:ClassifiedTaxCategory>
+        </n2:Item>
+        <n2:Price>
+            <n3:PriceAmount currencyID="RON">56.70</n3:PriceAmount>
+        </n2:Price>
+    </n2:InvoiceLine>
+    <n2:InvoiceLine>
+        <n3:ID>3</n3:ID>
+        <n3:InvoicedQuantity unitCode="H87">1.00</n3:InvoicedQuantity>
+        <n3:LineExtensionAmount currencyID="RON">250.00</n3:LineExtensionAmount>
+        <n2:Item>
+            <n3:Name>Transport</n3:Name>
+            <n2:ClassifiedTaxCategory>
+                <n3:ID>S</n3:ID>
+                <n3:Percent>21.00</n3:Percent>
+                <n2:TaxScheme>
+                    <n3:ID>VAT</n3:ID>
+                </n2:TaxScheme>
+            </n2:ClassifiedTaxCategory>
+        </n2:Item>
+        <n2:Price>
+            <n3:PriceAmount currencyID="RON">250.00</n3:PriceAmount>
+        </n2:Price>
+    </n2:InvoiceLine>
+</Invoice>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+         xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+         xmlns:prx="urn:sap.com:proxy:P01:/1SAI/TAS4D443EC6486F491EFBB3:916"
+         xmlns:n1="urn:oasis:names:specification:ubl:schema:xs:CommonExtensionComponents-2"
+         xmlns:xxx="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:zzz="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+         xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+    <zzz:UBLVersionID>2.1</zzz:UBLVersionID>
+    <zzz:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:efactura.mfinante.ro:CIUS-RO:1.0.1</zzz:CustomizationID>
+    <zzz:ID>511028910</zzz:ID>
+    <zzz:IssueDate>2025-08-25</zzz:IssueDate>
+    <zzz:DueDate>2025-08-25</zzz:DueDate>
+    <zzz:InvoiceTypeCode>380</zzz:InvoiceTypeCode>
+    <zzz:DocumentCurrencyCode>RON</zzz:DocumentCurrencyCode>
+    <zzz:TaxCurrencyCode>RON</zzz:TaxCurrencyCode>
+    <zzz:BuyerReference>Vanzare</zzz:BuyerReference>
+    <xxx:OrderReference>
+        <zzz:ID>511047508</zzz:ID>
+    </xxx:OrderReference>
+    <xxx:DespatchDocumentReference>
+        <zzz:ID>511231077</zzz:ID>
+    </xxx:DespatchDocumentReference>
+    <xxx:AdditionalDocumentReference>
+        <zzz:ID>511028910</zzz:ID>
+        <zzz:DocumentDescription>Vanzare</zzz:DocumentDescription>
+    </xxx:AdditionalDocumentReference>
+    <xxx:ProjectReference>
+        <zzz:ID>511005528</zzz:ID>
+    </xxx:ProjectReference>
+    <xxx:AccountingSupplierParty>
+        <xxx:Party>
+            <xxx:PostalAddress>
+                <zzz:StreetName>Com Floresti, Sat Floresti, DN1/E60, KM 490+13, Jud. Cluj</zzz:StreetName>
+                <zzz:CityName>Floresti</zzz:CityName>
+                <zzz:PostalZone>407280</zzz:PostalZone>
+                <zzz:CountrySubentity>RO-CJ</zzz:CountrySubentity>
+                <xxx:Country>
+                    <zzz:IdentificationCode>RO</zzz:IdentificationCode>
+                </xxx:Country>
+            </xxx:PostalAddress>
+            <xxx:PartyTaxScheme>
+                <zzz:CompanyID>RO11267586</zzz:CompanyID>
+                <xxx:TaxScheme>
+                    <zzz:ID>VAT</zzz:ID>
+                </xxx:TaxScheme>
+            </xxx:PartyTaxScheme>
+            <xxx:PartyLegalEntity>
+                <zzz:RegistrationName>S.C. Doka Romania Tehnica Cofrajelor S.R.L.</zzz:RegistrationName>
+            </xxx:PartyLegalEntity>
+            <xxx:PartyLegalEntity>
+                <zzz:CompanyID>J2004001180235</zzz:CompanyID>
+            </xxx:PartyLegalEntity>
+            <xxx:Contact>
+                <zzz:Name>Roxana Ionescu</zzz:Name>
+                <zzz:Telephone>+40 724 392 454</zzz:Telephone>
+                <zzz:ElectronicMail>roxana-gabriela.ionescu@doka.com</zzz:ElectronicMail>
+            </xxx:Contact>
+        </xxx:Party>
+    </xxx:AccountingSupplierParty>
+    <xxx:AccountingCustomerParty>
+        <xxx:Party>
+            <xxx:PostalAddress>
+                <zzz:StreetName>Str. Irinyi Janos nr. 4</zzz:StreetName>
+                <zzz:CityName>Marghita</zzz:CityName>
+                <zzz:PostalZone>415300</zzz:PostalZone>
+                <zzz:CountrySubentity>RO-BH</zzz:CountrySubentity>
+                <xxx:Country>
+                    <zzz:IdentificationCode>RO</zzz:IdentificationCode>
+                </xxx:Country>
+            </xxx:PostalAddress>
+            <xxx:PartyTaxScheme>
+                <zzz:CompanyID>RO34948765</zzz:CompanyID>
+                <xxx:TaxScheme>
+                    <zzz:ID>VAT</zzz:ID>
+                </xxx:TaxScheme>
+            </xxx:PartyTaxScheme>
+            <xxx:PartyLegalEntity>
+                <zzz:RegistrationName>SC AMBRUS A&amp;B CONSULTING SRL</zzz:RegistrationName>
+            </xxx:PartyLegalEntity>
+        </xxx:Party>
+    </xxx:AccountingCustomerParty>
+    <xxx:Delivery>
+        <xxx:DeliveryLocation>
+            <xxx:Address>
+                <zzz:StreetName>Com. Capleni, sat Capleni, nr.752</zzz:StreetName>
+                <zzz:CityName>Capleni</zzz:CityName>
+                <zzz:PostalZone>447080</zzz:PostalZone>
+                <zzz:CountrySubentity>RO-SM</zzz:CountrySubentity>
+                <xxx:Country>
+                    <zzz:IdentificationCode>RO</zzz:IdentificationCode>
+                </xxx:Country>
+            </xxx:Address>
+        </xxx:DeliveryLocation>
+    </xxx:Delivery>
+    <xxx:PaymentMeans>
+        <zzz:PaymentMeansCode>31</zzz:PaymentMeansCode>
+        <xxx:PayeeFinancialAccount>
+            <zzz:ID>RO74RZBR0000060002405825</zzz:ID>
+            <zzz:Name>Raiffeisen Bank</zzz:Name>
+            <xxx:FinancialInstitutionBranch>
+                <zzz:ID>RZBRROBU</zzz:ID>
+            </xxx:FinancialInstitutionBranch>
+        </xxx:PayeeFinancialAccount>
+    </xxx:PaymentMeans>
+    <xxx:TaxTotal>
+        <zzz:TaxAmount currencyID="RON">12631.50</zzz:TaxAmount>
+        <xxx:TaxSubtotal>
+            <zzz:TaxableAmount currencyID="RON">60150.00</zzz:TaxableAmount>
+            <zzz:TaxAmount currencyID="RON">12631.50</zzz:TaxAmount>
+            <xxx:TaxCategory>
+                <zzz:ID>S</zzz:ID>
+                <zzz:Percent>21.00</zzz:Percent>
+                <xxx:TaxScheme>
+                    <zzz:ID>VAT</zzz:ID>
+                </xxx:TaxScheme>
+            </xxx:TaxCategory>
+        </xxx:TaxSubtotal>
+    </xxx:TaxTotal>
+    <xxx:LegalMonetaryTotal>
+        <zzz:LineExtensionAmount currencyID="RON">60150.00</zzz:LineExtensionAmount>
+        <zzz:TaxExclusiveAmount currencyID="RON">60150.00</zzz:TaxExclusiveAmount>
+        <zzz:TaxInclusiveAmount currencyID="RON">72781.50</zzz:TaxInclusiveAmount>
+        <zzz:ChargeTotalAmount currencyID="RON">0.00</zzz:ChargeTotalAmount>
+        <zzz:PayableAmount currencyID="RON">72781.50</zzz:PayableAmount>
+    </xxx:LegalMonetaryTotal>
+    <xxx:InvoiceLine>
+        <zzz:ID>1</zzz:ID>
+        <zzz:InvoicedQuantity unitCode="H87">500.00</zzz:InvoicedQuantity>
+        <zzz:LineExtensionAmount currencyID="RON">58750.00</zzz:LineExtensionAmount>
+        <xxx:Item>
+            <zzz:Name>Placă 3S basic 27 200/50cm</zzz:Name>
+            <xxx:ClassifiedTaxCategory>
+                <zzz:ID>S</zzz:ID>
+                <zzz:Percent>21.00</zzz:Percent>
+                <xxx:TaxScheme>
+                    <zzz:ID>VAT</zzz:ID>
+                </xxx:TaxScheme>
+            </xxx:ClassifiedTaxCategory>
+        </xxx:Item>
+        <xxx:Price>
+            <zzz:PriceAmount currencyID="RON">117.50</zzz:PriceAmount>
+        </xxx:Price>
+    </xxx:InvoiceLine>
+    <xxx:InvoiceLine>
+        <zzz:ID>2</zzz:ID>
+        <zzz:InvoicedQuantity unitCode="H87">1.00</zzz:InvoicedQuantity>
+        <zzz:LineExtensionAmount currencyID="RON">1400.00</zzz:LineExtensionAmount>
+        <xxx:Item>
+            <zzz:Name>Transport</zzz:Name>
+            <xxx:ClassifiedTaxCategory>
+                <zzz:ID>S</zzz:ID>
+                <zzz:Percent>21.00</zzz:Percent>
+                <xxx:TaxScheme>
+                    <zzz:ID>VAT</zzz:ID>
+                </xxx:TaxScheme>
+            </xxx:ClassifiedTaxCategory>
+        </xxx:Item>
+        <xxx:Price>
+            <zzz:PriceAmount currencyID="RON">1400.00</zzz:PriceAmount>
+        </xxx:Price>
+    </xxx:InvoiceLine>
+</Invoice>
